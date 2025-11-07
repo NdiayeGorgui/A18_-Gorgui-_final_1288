@@ -16,13 +16,13 @@ jobs:
         run: ls -la /app || ls -la /
 
       - name: Build Docker image
-        run: docker build -t a18_Gorgui_final_1288 .
+        run: docker build -t a18_gorgui_final_1288 .
 
       - name: Tag Docker image
-        run: docker tag a18_Gorgui_final_1288 gorgui/a18_Gorgui_final_1288:latest
+        run: docker tag a18_gorgui_final_1288 gorgui/a18_gorgui_final_1288:latest
 
       - name: Login to Docker Hub
         run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
 
       - name: Push Docker image
-        run: docker push votrenom/a18_Gorgui_final_1288:latest
+        run: docker push gorgui/a18_gorgui_final_1288:latest
